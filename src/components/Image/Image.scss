@@ -1,0 +1,28 @@
+.image {
+  height: 100%;
+  width: 100%;
+  
+  &.default-img {
+    content: url('/resources/img/default.png');
+  }
+}
+
+@media screen and (-ms-high-contrast: active), 
+screen and (-ms-high-contrast: none) {
+  .image.default-img {
+    background: url('/resources/img/default.png');
+    background-repeat: initial;
+    background-size: 100%;
+    display: inherit;
+  }
+}
+
+@-moz-document url-prefix() {
+  .image.default-img {
+    background: url('/resources/img/default.png');
+    background-repeat: initial;
+    background-size: 100%;
+    display: inherit;
+  }
+}
+

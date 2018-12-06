@@ -1,0 +1,139 @@
+.viewable-selector {
+
+  &.btn {
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: 1.0s;
+    transition-delay: 0.0s;
+
+    padding: 6px 12px 2px 12px;
+    position: absolute;
+    box-shadow: none;
+    outline: none;
+    opacity: 0.8;
+    color: grey;
+    left: 10px;
+    top: 10px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      pointer-events: none;
+      opacity: 0.0;
+    }
+
+    span {
+      position: relative;
+      margin: 0 8px 0 0;
+      font-size: 18px;
+      float: left;
+      top: 2px;
+    }
+
+    label {
+      pointer-events: none;
+      font-weight: normal;
+    }
+  }
+
+  .items {
+    background: rgba(255, 255, 255, 0.7);
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+
+    .item {
+      transition-property: border, background;
+      transition-timing-function: ease;
+      transition-duration: 1.0s;
+      transition-delay: 0.0s;
+
+      border: 1px solid #cdcdcd;
+      padding: 4px 4px 4px 8px;
+      width: calc(100% - 8px);
+      margin: 4px 0 4px 4px;
+      border-radius: 4px;
+      text-align: left;
+      cursor: pointer;
+      color: #525252;
+      height: 78px;
+
+      &:hover {
+        background: rgba(255, 165, 0, 0.10);
+        border: 1px solid orange;
+      }
+
+      &.active {
+        background: rgba(255, 165, 0, 0.35);
+        border: 1px solid orange;
+        cursor: default;
+      }
+
+      .label-container {
+        width: calc(100% - 100px);
+        top: 14px;
+      }
+
+      .image-container {
+        margin: 0 10px 0 0;
+        height: 70px;
+        float: left;
+        width: 70px;
+
+        img {
+          height: 70px;
+          width: 70px;
+        }
+      }
+
+      .tooltip-thumbnail {
+        background-color: #ededed !important;
+        border: 1px solid grey;
+        padding: 2px;
+
+        div {
+          height: 200px;
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+
+.viewable-selector-controls {
+  margin: 6px 12px auto 0;
+  position: relative;
+  float: right;
+
+  span {
+    position: relative;
+    color: #9b9b9b;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  @media screen and (-ms-high-contrast: active), 
+    screen and (-ms-high-contrast: none) {  
+    /* IE10+ specific styles go here */  
+
+    span {
+      top: 4px;
+    }
+  }
+
+  &:hover {
+   
+    span {
+      color: #f58b00
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .view-selector.btn label {
+    position: relative;
+    top: 1px;
+  }
+}

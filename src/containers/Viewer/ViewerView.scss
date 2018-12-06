@@ -1,0 +1,178 @@
+.viewer-view {
+  flex-direction: column;
+  position: relative;
+  background: white;
+  overflow: none;
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .ff-toolbar {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+
+    .adsk-control-tooltip {
+      transform: translate(50px, 24px) !important;
+    }
+  }
+
+  &.mobile {
+    background-color: #0089c7;
+  }
+
+  .data-pane {
+    background-color: white;
+    height: 100%;
+  }
+  
+  .spinner {
+    display: none !important;
+  }
+  
+  .adsk-viewing-viewer.empty {
+    pointer-events: none;
+  }
+  
+  .empty .adsk-control,
+  .empty .viewcubeUI,
+  .empty .progressbg {
+    display: none;
+  }
+
+  // #toolbar-fullscreenTool,
+  // #navTools {
+  //   display: none;
+  // }
+
+  // .viewer-container.model2d{
+  //   #modelTools {
+  //     display: none;
+  //   }
+  // }
+
+  ///////////////////////////////////////////////////////////
+  // Forge Viewer
+  ///////////////////////////////////////////////////////////
+  .adsk-viewing-viewer.light-theme {
+
+    // #modelTools {
+    //   display: none;
+    // }
+    
+    .adsk-control-group {
+      color: #0a131c;
+      background-color: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.4);
+      border: 1px solid #0089c7;
+
+      .adsk-control-tooltip {
+        text-transform: inherit;
+      }
+    }
+
+    .treeview leaf > lmvheader:hover, 
+    .treeview group > lmvheader:hover, 
+    .treeview .leaf > lmvheader:hover, 
+    .treeview .group > lmvheader:hover {
+      background: rgba(255, 165, 0, 0.35) !important;
+    }
+
+    .treeview leaf > lmvheader:hover, 
+    .treeview group > lmvheader:hover, 
+    .treeview .leaf > lmvheader:hover, 
+    .treeview .group > lmvheader:hover {
+      background: rgba(255, 165, 0, 0.35) !important;
+    }
+
+    .docking-panel-tertiary-button {
+      border: solid 1px #0089c7;
+
+      &:hover, 
+      &:focus, 
+      &.active {
+          background-color: #0089c7;
+      }
+    }
+
+    .viewer-settings-panel.docking-panel {
+    
+      .settings-tabs {
+
+        .tabselected span {
+          color: #0089c7;
+          border-color: #0089c7;
+        }
+
+        span:hover {
+          color: #0089c7;
+        }
+      }
+
+      .settings-environment-cell.border-select {
+        border: solid 1px #0089c7;
+
+        &:hover {
+          border: solid 1px #0089c7;
+        }
+      }
+    }
+
+    .switch input:checked + .slider:before {
+      background-color: #0089c7;
+    }
+
+    .adsk-button {
+      transition-property: color;
+      transition-timing-function: ease;
+      transition-duration: 0.7s;
+      transition-delay: 0.0s;
+      color: #7e7e7e;
+    
+      .adsk-control-tooltip {
+        border: 1px solid #0089c7;
+        color: gray;
+      }
+
+      &:hover {
+        border: 1px solid #0089c7;
+        color: #0089c7;
+
+        .adsk-button-icon {
+          color: #0089c7;
+        }
+      }
+    }
+
+    .adsk-button.active {
+      border: 1px solid #0089c7;
+      color:#0089c7;
+    }
+
+    .docking-panel.menu .menu-item:hover {
+      background: rgba(255, 165, 0, 0.30);
+    }
+
+    .docking-panel {
+      text-align: left;
+    
+      .docking-panel-close {
+        top: -6px;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+// Firefox bullshit
+///////////////////////////////////////////////////////////
+@-moz-document url-prefix() {
+
+  .viewer-view.with-navbar .viewer {
+    height: calc(100vh - 64px);
+  }
+
+  .viewer-view .viewer {
+    height: calc(100vh);
+  }
+}

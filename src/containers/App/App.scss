@@ -1,0 +1,85 @@
+.app {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100&1+0,0+100;Blue+to+Transparent */
+  background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.app-logo {
+  //animation: App-logo-spin infinite 20s linear;
+  position: relative;
+  height: 44px;
+  float: left;
+  left: 10px;
+  top: 10px;
+}
+
+.app-header {
+  background-color: #222;
+  color: white;
+  height: 65px;
+}
+
+.app-title {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.app-links {
+  position: relative;
+  float: right;
+  top: 24px;
+    
+  .app-link {
+    transition-timing-function: ease;
+    transition-property: color;
+    transition-duration: 1.0s;
+    transition-delay: 0.0s;
+
+
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    float: left;
+    width: 50px;
+  }
+}
+
+a.app-link {
+  transition-timing-function: ease;
+  transition-property: color;
+  transition-duration: 1.0s;
+  transition-delay: 0.0s;
+
+  &:hover{
+    text-decoration: none !important;
+    color: orange !important;
+  }
+
+  label {
+    font-weight: bolder;
+    position: relative;
+    font-size: 24px;
+    left: 18px;
+    float: left;
+    top: 12px;
+  }
+}
+
+.app-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.app main {
+  height: calc(100% - 64px);
+}

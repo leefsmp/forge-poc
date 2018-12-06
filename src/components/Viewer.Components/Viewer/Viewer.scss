@@ -1,0 +1,26 @@
+.viewer-app-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  .viewer-container {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    .docking-panel {
+      text-align: left;
+    
+      .docking-panel-close {
+        top: -6px;
+      }
+    }
+  }
+
+  .viewer-panels {
+    position: absolute;
+    z-index: 11;
+  }
+}

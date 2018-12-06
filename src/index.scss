@@ -1,0 +1,181 @@
+/////////////////////////////////////////////////////////
+// Some best-practice CSS that's useful for most apps
+//
+/////////////////////////////////////////////////////////
+html {
+  box-sizing: border-box;
+  overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
+
+html, body {
+  -ms-overflow-style: none;
+  user-select: none;
+  overflow: hidden;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.core-layout {
+  &.with-navbar {
+    height: calc(100vh - 65px);
+  }
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-weight: normal;
+}
+
+/////////////////////////////////////////////////////////
+// Reflex Layout
+//
+/////////////////////////////////////////////////////////
+.reflex-container.horizontal > .reflex-splitter {
+  //border-bottom: 1px solid #0088c72f;
+  //border-top: 1px solid #0088c72f;
+  background: #cdcdcd;
+  height: 4px;
+  z-index: 1;
+}
+
+.reflex-container.horizontal > .reflex-splitter:hover, 
+.reflex-container.horizontal > .reflex-splitter.active {
+  border-bottom: 1px solid orange;
+  border-top: 1px solid orange;
+}
+
+.reflex-container.vertical > .reflex-splitter {
+  //border-right: 1px solid #0088c72f;
+  //border-left: 1px solid #0088c72f;
+  background: #cdcdcd;
+  z-index: 1;
+  width: 4px;
+}
+
+.reflex-container.vertical > .reflex-splitter:hover, 
+.reflex-container.vertical > .reflex-splitter.active {
+  border-right: 1px solid orange;
+  border-left: 1px solid orange;
+}
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin {
+  border-bottom: 8px solid rgba(255, 255, 255, 0);
+  border-top: 8px solid rgba(255, 255, 255, 0);
+  height: 17px !important;
+  cursor: row-resize;
+  margin: -8px 0;
+  width: 100%;
+}
+
+.reflex-container > .reflex-splitter.reflex-thin {
+  background: transparent;
+}
+
+///////////////////////////////////////////////////////////
+// disabled controls
+///////////////////////////////////////////////////////////
+button[disabled],
+input[disabled],
+div[disabled] {
+  cursor: not-allowed !important;
+}
+
+.notifications {
+  margin: 60px 0 0 -5px;
+  position: absolute;
+  
+  &>div {
+    &>div{
+      position: relative;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+//
+//
+///////////////////////////////////////////////////////////
+button {
+  transition-property: color;
+  transition-timing-function: ease;
+  transition-duration: 0.7s;
+  transition-delay: 0.0s;
+
+  background: transparent;
+  color: #9b9b9b;
+  outline: none;
+  border: none;
+
+  span {
+    transition-property: color;
+    transition-timing-function: ease;
+    transition-duration: 0.7s;
+    transition-delay: 0.0s;
+    color: #9b9b9b;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: #d0d0d0;
+
+    span {
+      color: #d0d0d0;
+    }
+  }
+
+  &:hover:not(:disabled),
+  &.active {
+    color:orange;
+    span {
+      color: orange;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////
+//
+//
+///////////////////////////////////////////////////////////
+.dropdown {
+  
+  .dropdown-menu {
+    max-height: 150px;
+    overflow: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .dropdown-menu > li > a:hover, 
+  .dropdown-menu > li > a:focus {
+      background-color: rgba(0, 137, 199, 0.5);
+  }
+
+  &> button {
+    padding: 0 10px 0 10px;
+    overflow: hidden;
+    height: 26px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .caret {
+    margin-left: 6px;
+  }
+}
+

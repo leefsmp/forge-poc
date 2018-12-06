@@ -1,0 +1,24 @@
+.input {
+  background: #e0e0e0;
+  margin-bottom: 6px;
+  height: 32px;   
+  
+  input {
+    user-select: auto !important;
+    background: transparent;
+    padding: 0 0 0 4px;
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  input[disabled] {
+    background: #f7f6f6;
+    color: #949494;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
