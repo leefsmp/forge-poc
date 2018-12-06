@@ -76,7 +76,7 @@ export default class TranslateCommand extends ViewerCommand {
   /////////////////////////////////////////////////////////
   onDeactivate() {
   
-    this.clearSelection () 
+    this.viewer.clearSelection()
   }
 
   /////////////////////////////////////////////////////////
@@ -206,7 +206,7 @@ export default class TranslateCommand extends ViewerCommand {
   async setSelection (event) {
 
     if (!event.selections.length) {
-      return this.clearSelection()
+      return this.hideControl()
     }
 
     this.selection = event.selections[0]
@@ -275,7 +275,7 @@ export default class TranslateCommand extends ViewerCommand {
   // 
   //
   /////////////////////////////////////////////////////////
-  clearSelection () {
+  hideControl () {
    
     this.viewer.removeEventListener(
       Autodesk.Viewing.CAMERA_CHANGE_EVENT,
@@ -296,8 +296,6 @@ export default class TranslateCommand extends ViewerCommand {
     this.selection = null
 
     this.emit('selection', null)
-
-    this.viewer.clearSelection()
   }
 
   /////////////////////////////////////////////////////////
@@ -316,7 +314,7 @@ export default class TranslateCommand extends ViewerCommand {
 
     this.fullTransform = fullTransform
 
-    this.clearSelection()
+    this.viewer.clearSelection()
   }
 }
 

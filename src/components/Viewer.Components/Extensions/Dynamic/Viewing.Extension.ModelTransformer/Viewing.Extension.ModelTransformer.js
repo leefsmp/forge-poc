@@ -502,7 +502,8 @@ class ModelTransformerExtension extends MultiModelExtensionBase {
 
     this.applyTransform (transform)
 
-    state.transformExtension.clearSelection()
+    this.activeCommand && 
+    this.activeCommand.hideControl()
 
     this.viewer.impl.sceneUpdated(true)
   }

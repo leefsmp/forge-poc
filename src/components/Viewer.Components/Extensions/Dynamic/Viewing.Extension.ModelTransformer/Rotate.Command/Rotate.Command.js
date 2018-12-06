@@ -33,7 +33,7 @@ export default class RotateCommand extends ViewerCommand {
   /////////////////////////////////////////////////////////
   onDeactivate () {
 
-    this.clearSelection()
+    this.viewer.clearSelection()
   }
 
   /////////////////////////////////////////////////////////
@@ -44,7 +44,7 @@ export default class RotateCommand extends ViewerCommand {
 
     this.fullTransform = fullTransform
 
-    this.clearSelection()
+    this.viewer.clearSelection()
   }
   
   /////////////////////////////////////////////////////////
@@ -63,7 +63,7 @@ export default class RotateCommand extends ViewerCommand {
     }
 
     if (!event.selections.length) {
-      return this.clearSelection()
+      return this.hideControl()
     }
 
     this.selection = event.selections[0]
@@ -98,7 +98,7 @@ export default class RotateCommand extends ViewerCommand {
   // Selection cleared
   //
   ///////////////////////////////////////////////////////////////////////////
-  clearSelection () {
+  hideControl (preserveViewerSelection) {
 
     this.selection = null
 
@@ -112,8 +112,6 @@ export default class RotateCommand extends ViewerCommand {
     }
 
     this.emit('selection', null)
-
-    this.viewer.clearSelection()
   }
 
   ///////////////////////////////////////////////////////////////////////////
