@@ -7,7 +7,7 @@ import MultiModelExtensionBase from 'Viewer.MultiModelExtensionBase'
 import ConfigStorageAPI from './Viewing.Extension.Config.StorageAPI'
 import DropdownButton from 'react-bootstrap/lib/DropdownButton'
 import ConfigManagerCmd from './ConfigManager.Command'
-import ConfigAPI from './Viewing.Extension.Config.API'
+//import ConfigAPI from './Viewing.Extension.Config.API'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
 import './Viewing.Extension.ConfigManager.scss'
 import WidgetContainer from 'WidgetContainer'
@@ -56,7 +56,7 @@ class ConfigManagerExtension extends MultiModelExtensionBase {
 
       const url = `${apiUrl}/${database}/${modelId}`
 
-      this.api = new ConfigAPI(url)
+      this.api = new ConfigStorageAPI(url)
     }
   }
 
@@ -239,7 +239,7 @@ class ConfigManagerExtension extends MultiModelExtensionBase {
 
     const url = `${apiUrl}/${database}/${modelId}`
 
-    this.api = new ConfigAPI(url)
+    this.api = new ConfigStorageAPI(url)
   }
 
   /////////////////////////////////////////////////////////
